@@ -4,10 +4,6 @@ import router from './router'
 import store from './store'
 import './registerServiceWorker'
 
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
-Vue.use(ElementUI) 
-
 // 国际化
 import i18n from './locale'
 // 过滤器
