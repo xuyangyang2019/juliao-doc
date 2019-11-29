@@ -23,12 +23,25 @@ $color-error: #f04134;
 $color-warn: #f5a623;
 $color-lighting: #9013fe;
 
-.base-page {
-  display: flex;
-  flex-flow: column;
-  height: 100%;
+.a {
+  text-decoration: none;
+  &:link {
+    color: #cbbde2;
+  }
+  &:visited {
+    color: #cbbde2;
+  }
+  &:hover {
+    color: white;
+  }
+  &:active {
+    color: white;
+  }
 }
 
-.white{
-  color:white;
+.can-not-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

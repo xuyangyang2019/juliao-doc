@@ -1,21 +1,32 @@
 <template>
   <div class="home">
     <!-- header -->
-    <header class="header">
+    <header class="header can-not-select">
       <div class="layout">
         <div class="logo">
           <img class="logo-img" src="@/assets/img/logo.png" alt="聚播科技" />
-          <p class="white">SDK 使用指南</p>
+          <p class="logo-tip">SDK 使用指南</p>
         </div>
         <ul class="nav">
-          <!-- <li class="tag" v-for="(tag, index) in tags" :key="index" v-text="tag"></li> -->
+          <li class="tag" v-for="(tag, index) in tags" :key="index">
+            <a class="a" :href="tag.url" target="_blank" v-text="tag.name"></a>
+          </li>
         </ul>
       </div>
     </header>
     <!-- content  -->
     <main class="content">
       <!-- aside -->
-      <aside class="aside"></aside>
+      <aside class="aside">
+        <div class="search">
+          <input type="search" name id />
+        </div>
+        <ul class="layouts">
+          <li class="layout" v-for="(layout, index) in layouts" :key="index">
+            <p v-text="layout"></p>
+          </li>
+        </ul>
+      </aside>
       <!-- main -->
       <div class="main"></div>
     </main>
@@ -35,7 +46,48 @@ export default {
   name: 'Home',
   data() {
     return {
-      tags: ['官方网站', '在线体验', '商务合作', 'GitBook'],
+      tags: [
+        { url: 'http://www.yunlauncher.com/', name: '官方网站' },
+        { url: 'http://www.yunlauncher.com/', name: '在线体验' },
+        { url: 'http://www.yunlauncher.com/', name: '商务合作' },
+        { url: 'http://www.yunlauncher.com/', name: 'GitBook' },
+      ],
+      layouts: [
+        '★【顺序必看一】ECO返利系统简介',
+        '★【必看】新手入门教程',
+        '★【重点】返利手机调试',
+        '★【必看】免ROOT版本安装视频',
+        '如何首单自定绑定',
+        '杀熟分佣方案',
+        '普通分佣方案',
+        '自动提现视频及效果',
+        '客服系统教程及群发系统教程',
+        '新手模式设置',
+        '七牛云教程',
+        '数据迁移',
+        '朋友圈发送教程及视频',
+        '导购域名设置文档',
+        '中间页设置文档',
+        '自定义回复文档',
+        '新手模式文档',
+        '拼多多授权教程',
+        '京东授权教程',
+        '微信公众号模块',
+        'ipad登录教程',
+        '安全中心用途',
+        '冻结佣金设置',
+        '子账号设置',
+        '拉群设置',
+        '维权订单上传',
+        '免单系统教程',
+        '群返利教程',
+        '自动通过好友发送拉群链接教程',
+        '给eco后台被封设备微信账号下的用户强制推送消息教程',
+        '自动重启设置教程',
+        '如何停止后台群发',
+        '手机如何设置消息延迟回复'
+
+      ],
       articles: [
         {
           id: '1',
@@ -96,7 +148,6 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-  border: solid red 1px;
   display: flex;
   height: 100%;
   flex-direction: column;
@@ -108,24 +159,37 @@ export default {
   // line-height: 3rem;
   height: 60px;
   min-height: 60px;
-  background: black;
-
+  background: #563d7c;
   display: flex;
   align-items: center;
-
-  // border: solid gray 1px;
   .layout {
     display: flex;
-    border: solid red 1px;
+    width: 100%;
     align-items: center;
+    justify-content: space-between;
     .logo {
       width: 300px;
       display: flex;
       align-items: center;
-      justify-content: space-around;
       .logo-img {
         width: 30px;
         height: 30px;
+        margin-left: 20px;
+      }
+      .logo-tip {
+        color: #cbbde2;
+        margin-left: 20px;
+      }
+    }
+    .nav {
+      display: flex;
+      margin-right: 20px;
+      .tag {
+        margin: 0 5px;
+        cursor: pointer;
+        &:hover {
+          color: aquamarine;
+        }
       }
     }
   }
@@ -135,12 +199,30 @@ export default {
   flex: auto;
   width: 100%;
   display: flex;
-  border: solid yellow 1px;
+  overflow: hidden;
 
   .aside {
     width: 300px;
+    height: 100%;
+    max-height: 100%;
     max-width: 300px;
-    border: solid red 1px;
+
+    .search {
+      height: 80px;
+      min-height: 80px;
+    }
+
+    .layouts {
+      flex: auto;
+      max-height: 100%;
+      overflow-y: scroll;
+      margin-bottom: 20px;
+      // height: 600px;
+      .layout {
+        border: solid black 1px;
+        margin: 5px 0;
+      }
+    }
   }
 
   .main {
