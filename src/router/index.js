@@ -42,39 +42,39 @@ const routes = [
             requiresAuth: false
         }
     },
-    {
-        path: "/about",
-        name: "about",
-        component: () =>
-            import(/* webpackChunkName: "about" */ "../views/About.vue"),
-        meta: {
-            icon: "",
-            title: "about",
-            keepAlive: false
-        }
-    },
-    {
-        path: "/work",
-        name: "work",
-        component: () =>
-            import(/* webpackChunkName: "works" */ "../views/Work.vue"),
-        meta: {
-            icon: "",
-            title: "work",
-            keepAlive: false
-        }
-    },
-    {
-        path: "/archives",
-        name: "archives",
-        component: () =>
-            import(/* webpackChunkName: "file" */ "../views/Archives.vue"),
-        meta: {
-            icon: "",
-            title: "archives",
-            keepAlive: false
-        }
-    }
+    // {
+    //     path: "/about",
+    //     name: "about",
+    //     component: () =>
+    //         import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    //     meta: {
+    //         icon: "",
+    //         title: "about",
+    //         keepAlive: false
+    //     }
+    // },
+    // {
+    //     path: "/work",
+    //     name: "work",
+    //     component: () =>
+    //         import(/* webpackChunkName: "works" */ "../views/Work.vue"),
+    //     meta: {
+    //         icon: "",
+    //         title: "work",
+    //         keepAlive: false
+    //     }
+    // },
+    // {
+    //     path: "/archives",
+    //     name: "archives",
+    //     component: () =>
+    //         import(/* webpackChunkName: "file" */ "../views/Archives.vue"),
+    //     meta: {
+    //         icon: "",
+    //         title: "archives",
+    //         keepAlive: false
+    //     }
+    // }
 ];
 
 const router = new VueRouter({

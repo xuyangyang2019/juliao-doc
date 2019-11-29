@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Layout>
-      <Nav />
+      <!-- <Nav /> -->
       <router-view />
     </Layout>
   </div>
@@ -10,7 +10,7 @@
 <script>
 import Layout from "@/layouts";
 // 导航栏
-import Nav from "@/components/Nav.vue";
+// import Nav from "@/components/Nav.vue";
 
 export default {
   name: "App",
@@ -21,7 +21,7 @@ export default {
   },
   components: {
     Layout,
-    Nav,
+    // Nav,
   },
   methods: {
     // 是手机返回true
