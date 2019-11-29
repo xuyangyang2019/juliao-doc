@@ -2,7 +2,11 @@
   <div class="home">
     <!-- header -->
     <header class="header">
-      <div class="nav-layout">
+      <div class="layout">
+        <div class="logo">
+          <img class="logo-img" src="@/assets/img/logo.png" alt="聚播科技" />
+          <p class="white">SDK 使用指南</p>
+        </div>
         <ul class="nav">
           <!-- <li class="tag" v-for="(tag, index) in tags" :key="index" v-text="tag"></li> -->
         </ul>
@@ -100,9 +104,31 @@ export default {
 
 .header {
   width: 100%;
-  height: 3rem;
-  line-height: 3rem;
-  border: solid red 1px;
+  // height: 3rem;
+  // line-height: 3rem;
+  height: 60px;
+  min-height: 60px;
+  background: black;
+
+  display: flex;
+  align-items: center;
+
+  // border: solid gray 1px;
+  .layout {
+    display: flex;
+    border: solid red 1px;
+    align-items: center;
+    .logo {
+      width: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      .logo-img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
 }
 
 .content {
